@@ -1,1 +1,0 @@
-{"virtualbox":{"/home/ubuntu/sport-social-network/":{"guestpath":"/home/ubuntu/sport-social-network","hostpath":"/home/dungvand/sport-social-network","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/home/dungvand/sport-social-network/src","disabled":false,"__vagrantfile":true}}}
