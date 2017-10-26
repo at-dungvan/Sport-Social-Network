@@ -12,5 +12,10 @@ app.config(function ($routeProvider) {
 				controller: 'LoginController',
 				templateUrl: 'app/views/login-page.html'
 			})
+		.when('/signup',
+			{
+				controller: 'SignUpController',
+				templateUrl: 'app/views/signup-page.html'
+			})
 		.otherwise({ redirectTo: '/' });
 });
