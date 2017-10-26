@@ -1,36 +1,57 @@
 ## User API
 
-### `GET` User
+
+### `Get` users
 ```
-/api/users/me
+/users
 ```
-Get information about a current user login.
+Get list of user
 
 #### Request header
+
 | Key | Value |
 |---|---|
 | Accept | application/json |
-| Authorization | {token_type} {access_token} |
 
-#### Sample Response
+#### Sample response
+
 ```json
 {
-  "data": {
-    "id": 74,
-    "full_name": "dungvan2512",
-    "email": "dungvan@test.email.com",
-    "birthday": null,
-    "gender": 0,
-    "address": null,
-    "phone_number": null,
-    "image": "http://foodmarket.com/images/users/default.jpg",
-    "is_admin": 1,
-    "is_active": 0,
-    "created_at": "2017-09-01 02:22:32",
-    "updated_at": "2017-09-01 02:22:32",
-    "deleted_at": null
-  },
-  "success": true
+    "data": [
+        {
+            "id": 1,
+            "full_name": "Ms. Jody Predovic II",
+            "email": "rickie.goldner@example.net",
+            "is_admin": 0,
+            "phone": "1-668-651-5592 x5990",
+            "gender": "male",
+            "bio": "Nemo tempora reprehenderit similique voluptatem mollitia.",
+            "created_at": "2017-10-26 07:51:40",
+            "updated_at": "2017-10-26 07:51:40"
+        },
+        {
+            "id": 2,
+            "full_name": "Caleb Hermann",
+            "email": "kertzmann.nasir@example.com",
+            "is_admin": 1,
+            "phone": "(873) 718-9007",
+            "gender": "male",
+            "bio": "Explicabo aliquam rem at et sit.",
+            "created_at": "2017-10-26 07:51:40",
+            "updated_at": "2017-10-26 07:51:40"
+        },
+        {
+            "id": 3,
+            "full_name": "Alene Kovacek",
+            "email": "homenick.magnolia@example.com",
+            "is_admin": 0,
+            "phone": "465-569-7735",
+            "gender": "male",
+            "bio": "Ea neque asperiores molestiae molestias nesciunt nulla. Cupiditate nam tempore distinctio aut.",
+            "created_at": "2017-10-26 07:51:40",
+            "updated_at": "2017-10-26 07:51:40"
+        }
+    ]
 }
 ```
 
@@ -119,25 +140,44 @@ Login system
 }
 ```
 
-### `Get` users
 
-Get list of user
+### `GET` User
+```
+/api/users/{id}
+```
+Get information about a current user login.
 
 #### Request header
-
 | Key | Value |
 |---|---|
 | Accept | application/json |
+| Authorization | {token_type} {access_token} |
 
-#### Sample response
-
+#### Sample Response
 ```json
-
+{
+  "data": {
+    "id": 74,
+    "full_name": "dungvan2512",
+    "email": "dungvan@test.email.com",
+    "birthday": null,
+    "gender": 0,
+    "address": null,
+    "phone_number": null,
+    "image": "http://foodmarket.com/images/users/default.jpg",
+    "is_admin": 1,
+    "is_active": 0,
+    "created_at": "2017-09-01 02:22:32",
+    "updated_at": "2017-09-01 02:22:32",
+    "deleted_at": null
+  },
+  "success": true
+}
 ```
 
 ### `Put` user
 ```
-/users/me
+/users/{id}
 ```
 Update profile of current user
 
@@ -184,5 +224,35 @@ Update profile of current user
         "created_at": "2017-09-01 02:22:32",
         "updated_at": "2017-10-01 02:22:32",
     }
+}
+```
+
+### `Delete` user
+```
+/users/{id}
+```
+The admin users delete another user
+
+#### Request header
+
+| Key | Value |
+|---|---|
+| Accept | application/json |
+| Authorization | {token_type} {access_token} |
+
+#### Sample Response
+```json
+{
+  "data": {
+      "id": 74,
+      "full_name": "dungvan25123",
+      "email": "dungvan@test.email.com",
+      "gender": "male",
+      "phone": "123456789",
+      "bio": "test bio",
+      "is_admin": 1,
+      "created_at": "2017-09-01 02:22:32",
+      "updated_at": "2017-10-01 02:22:32",
+  }
 }
 ```
