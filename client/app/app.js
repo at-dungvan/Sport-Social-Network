@@ -7,5 +7,10 @@ app.config(function ($routeProvider) {
 				controller: 'HomeController',
 				templateUrl: 'app/views/home-page.html'
 			})
+		.when('/login',
+			{
+				controller: 'LoginController',
+				templateUrl: 'app/views/login-page.html'
+			})
 		.otherwise({ redirectTo: '/' });
 });
