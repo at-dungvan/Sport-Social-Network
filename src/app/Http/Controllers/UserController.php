@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreUserRequest;
+use App\Http\Requests\UpdateUserRequest;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -58,18 +60,11 @@ class UserController extends ApiController
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  StoreUserRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreUserRequest $request)
     {
-        $rule = [
-            'full_name' => 'required',
-            'email' => 'required|email|unique:users',
-            'password' => 'required|min:6|confirmed',
-        ];
-        $this->validate($request, $rule);
-
         $data = $request->all();
         $data['password'] = bcrypt($request->password);
 
@@ -94,21 +89,16 @@ class UserController extends ApiController
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  UpdateUserRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateUserRequest $request, $id)
     {
         $user = User::findorFail($id);
-        $rule = [
-            'email' => 'email|unique:users,email,'.$user->id,
-            'password' => 'min:6|confirmed',
-            'is_admin' => 'in:' . User::ADMIN_USER . ',' . User::REGULAR_USER,
-            'phone_number' => 'require',
-            'gender' => 'in:' . User::STR_FEMALE . ',' . User::STR_MALE
-        ];
-        $this->validate($request, $rule);
+        if(!$request->user()->isAdmin() && $request->user()->id != $user->id) {
+            return $this->errorResponse('You do\'nt have permission to access this feature', Response::HTTP_BAD_REQUEST);
+        }
 
         if($request->has('full_name')) {
             $user->full_name = $request->full_name;
@@ -120,10 +110,15 @@ class UserController extends ApiController
             $user->password = bcrypt($request->password);
         }
         if($request->has('is_admin')) {
-            $user->is_admin = $request->is_admin;
+            if($request->user()->isAdmin())
+            {
+                $user->is_admin = $request->is_admin;
+            } else {
+                return $this->errorResponse('Only admin users modify the admin field', Response::HTTP_CONFLICT);
+            }
         }
         if(!$user->isDirty()) {
-            return $this->errorResponse('You need specify a different value to update', 422);
+            return $this->errorResponse('You need specify a different value to update', Response::HTTP_UNPROCESSABLE_ENTITY);
         }
 
         $user->save();
@@ -139,6 +134,18 @@ class UserController extends ApiController
      */
     public function destroy($id)
     {
-        //
+        $user = User::findOrFail($id);
+
+        if(\request()->user()->isAdmin()) {
+            if(\request()->user()->id != $user->id) {
+                $user->delete();
+
+                return $this->showOne($user);
+            } else {
+                $this->errorResponse('Ypu can not delete yourself', Response::HTTP_BAD_REQUEST);
+            }
+        }
+
+        return $this->errorResponse('You do\'nt have permission to access this feature', Response::HTTP_CONFLICT);
     }
 }
