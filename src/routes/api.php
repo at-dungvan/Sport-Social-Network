@@ -13,6 +13,13 @@ use Illuminate\Http\Request;
 |
 */
 
+Route::middleware(['auth:api'])->group(function () {
+    /**
+     * Users
+     */
+    Route::resource('users', 'UserController', ['only' => ['update', 'destroy']]);
+});
+
 /**
  * Players
  */
@@ -36,7 +43,7 @@ Route::resource('teams', 'TeamController', ['except' => ['create', 'edit']]);
 /**
  * Users
  */
-Route::resource('users', 'UserController', ['except' => ['create', 'edit']]);
+Route::resource('users', 'UserController', ['only' => ['index', 'show', 'store']]);
 
 /**
  * Login

@@ -45,7 +45,7 @@ class User extends Authenticatable
 
     public function isAdmin()
     {
-        return $this->is_admin == User::ADMIN_USER;
+        return $this->is_admin === User::ADMIN_USER;
     }
 
     public function setGenderAttribute($gender)

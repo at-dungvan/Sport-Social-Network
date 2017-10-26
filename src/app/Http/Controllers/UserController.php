@@ -135,17 +135,8 @@ class UserController extends ApiController
     public function destroy($id)
     {
         $user = User::findOrFail($id);
+        $user->delete();
 
-        if(\request()->user()->isAdmin()) {
-            if(\request()->user()->id != $user->id) {
-                $user->delete();
-
-                return $this->showOne($user);
-            } else {
-                $this->errorResponse('Ypu can not delete yourself', Response::HTTP_BAD_REQUEST);
-            }
-        }
-
-        return $this->errorResponse('You do\'nt have permission to access this feature', Response::HTTP_CONFLICT);
+        return $this->showOne($user);
     }
 }
