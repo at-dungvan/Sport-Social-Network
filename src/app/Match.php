@@ -20,8 +20,13 @@ class Match extends Model
         return $this->belongsToMany(Team::class);
     }
 
-    public function master()
+    public function matchMaster()
     {
         return $this->belongsTo(MatchMaster::class);
+    }
+
+    public function tournament()
+    {
+        return $this->belongsTo(Tournament::class);
     }
 }

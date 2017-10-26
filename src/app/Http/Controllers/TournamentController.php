@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\MatchMaster;
+use App\Tournament;
 use Illuminate\Http\Request;
 
-class MatchMasterController extends ApiController
+class TournamentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class MatchMasterController extends ApiController
     /**
      * Display the specified resource.
      *
-     * @param  \App\MatchMaster  $matchMaster
+     * @param  \App\Tournament  $tournament
      * @return \Illuminate\Http\Response
      */
-    public function show(MatchMaster $matchMaster)
+    public function show(Tournament $tournament)
     {
         //
     }
@@ -52,10 +52,10 @@ class MatchMasterController extends ApiController
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\MatchMaster  $matchMaster
+     * @param  \App\Tournament  $tournament
      * @return \Illuminate\Http\Response
      */
-    public function edit(MatchMaster $matchMaster)
+    public function edit(Tournament $tournament)
     {
         //
     }
@@ -64,10 +64,10 @@ class MatchMasterController extends ApiController
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\MatchMaster  $matchMaster
+     * @param  \App\Tournament  $tournament
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, MatchMaster $matchMaster)
+    public function update(Request $request, Tournament $tournament)
     {
         //
     }
@@ -75,10 +75,10 @@ class MatchMasterController extends ApiController
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\MatchMaster  $matchMaster
+     * @param  \App\Tournament  $tournament
      * @return \Illuminate\Http\Response
      */
-    public function destroy(MatchMaster $matchMaster)
+    public function destroy(Tournament $tournament)
     {
         //
     }
