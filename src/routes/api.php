@@ -37,3 +37,8 @@ Route::resource('teams', 'TeamController', ['except' => ['create', 'edit']]);
  * Users
  */
 Route::resource('users', 'UserController', ['except' => ['create', 'edit']]);
+
+/**
+ * Login
+ */
+Route::post('users/login', 'UserController@login');

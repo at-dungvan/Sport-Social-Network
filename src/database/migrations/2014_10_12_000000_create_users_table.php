@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->boolean('is_admin')->default(\App\User::REGULAR_USER);
             $table->string('phone', 30)->nullable();
             $table->boolean('gender')->default(\App\User::MALE);
-            $table->string('bio')->nullable();
+            $table->text('bio')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
