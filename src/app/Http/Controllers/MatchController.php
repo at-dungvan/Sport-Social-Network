@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Match;
 use Illuminate\Http\Request;
 
-class MatchController extends Controller
+class MatchController extends ApiController
 {
     /**
      * Display a listing of the resource.

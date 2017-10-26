@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\TournamentMaster;
 use Illuminate\Http\Request;
 
-class TournamentMasterController extends Controller
+class TournamentMasterController extends ApiController
 {
     /**
      * Display a listing of the resource.
