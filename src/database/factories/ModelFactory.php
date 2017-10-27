@@ -3,6 +3,7 @@
 use App\Match;
 use App\MatchMaster;
 use App\Team;
+use App\Tournament;
 use App\User;
 use Faker\Generator as Faker;
 
@@ -32,6 +33,16 @@ $factory->define(User::class, function (Faker $faker) {
     ];
 });
 
+
+$factory->define(Tournament::class, function (Faker $faker) {
+   return [
+       'name' => $faker->company,
+       'tournament_master_id' => User::all()->random(),
+       'place' => $faker->city,
+       'date_start' => $faker->date()
+   ];
+});
+
 $factory->define(Team::class, function (Faker $faker) {
     return [
         'name' => $faker->company,
@@ -42,6 +53,7 @@ $factory->define(Match::class, function (Faker $faker) {
     return [
         'name' => $faker->company,
         'match_master_id' => MatchMaster::all()->random(),
+        'tournament_id' => Tournament::all()->random(),
         'place' => $faker->city,
         'date' => $faker->date(),
         'time' => $faker->time(),

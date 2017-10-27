@@ -4,6 +4,7 @@ use App\Match;
 use App\Player;
 use App\Substitute;
 use App\Team;
+use App\Tournament;
 use App\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -26,10 +27,13 @@ class DatabaseSeeder extends Seeder
         DB::table('substitute_team')->truncate();
 
         $usersQuantity = 100;
-        $teamsQuantity = 7;
-        $matchesQuantity = 12;
+        $tournamentsQuantity = 3;
+        $teamsQuantity = 12;
+        $matchesQuantity = 20;
 
         factory(User::class, $usersQuantity)->create();
+
+        factory(Tournament::class, $tournamentsQuantity)->create();
 
         factory(Team::class, $teamsQuantity)->create()->each(
             function ($team) {

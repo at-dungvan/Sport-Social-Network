@@ -12,3 +12,50 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
+Route::middleware(['auth:api'])->group(function () {
+    /**
+     * Users
+     */
+    Route::resource('users', 'UserController', ['only' => ['update', 'destroy']]);
+  
+    /**
+    * Teams
+    */
+    Route::resource('teams', 'TeamController', ['only' => ['update', 'store', 'destroy']]);
+    
+    /**
+    * Matches
+    */
+    Route::resource('matches', 'MatchController', ['only' => ['update', 'store', 'destroy']]);
+});
+
+/**
+ * Players
+ */
+Route::resource('players', 'PlayerController', ['only' => ['index', 'show']]);
+
+/**
+ * Substitutes
+ */
+Route::resource('substitutes', 'SubstituteController', ['only' => ['index', 'show']]);
+
+/**
+ * Matches
+ */
+Route::resource('matches', 'MatchController', ['only' => ['index', 'show']]);
+
+/**
+ * Teams
+ */
+Route::resource('teams', 'TeamController', ['only' => ['index', 'show']]);
+
+/**
+ * Users
+ */
+Route::resource('users', 'UserController', ['only' => ['index', 'show', 'store']]);
+
+/**
+ * Login
+ */
+Route::post('users/login', 'UserController@login');
