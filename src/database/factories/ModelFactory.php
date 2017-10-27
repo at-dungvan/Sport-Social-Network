@@ -46,7 +46,8 @@ $factory->define(Tournament::class, function (Faker $faker) {
 $factory->define(Team::class, function (Faker $faker) {
     return [
         'name' => $faker->company,
-   ];
+        'team_master_id' => User::all()->random()
+    ];
 });
 
 $factory->define(Match::class, function (Faker $faker) {

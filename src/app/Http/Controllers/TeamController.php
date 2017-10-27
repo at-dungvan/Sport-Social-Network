@@ -42,6 +42,7 @@ class TeamController extends ApiController
     {
         $data = [];
         $data['name'] = $request->name;
+        $data['team_master_id'] = $request->user()->id;
         $team = Team::create($data);
         if($request->has('players')){
             $players = $request->players;
