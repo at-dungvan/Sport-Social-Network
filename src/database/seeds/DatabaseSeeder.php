@@ -33,6 +33,12 @@ class DatabaseSeeder extends Seeder
 
         factory(User::class, $usersQuantity)->create();
 
+        Tournament::create([
+            'name' => 'Free tournament',
+            'tournament_master_id' => 1,
+            'place' => 'any',
+            'date_start' => '2000-01-01'
+        ]);
         factory(Tournament::class, $tournamentsQuantity)->create();
 
         factory(Team::class, $teamsQuantity)->create()->each(
