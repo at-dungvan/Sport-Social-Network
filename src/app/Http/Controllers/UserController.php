@@ -52,7 +52,7 @@ class UserController extends ApiController
      */
     public function index()
     {
-        $user = User::all();
+        $user = User::paginate(User::ITEMS_PER_PAGE);
 
         return $this->showAll($user);
     }

@@ -14,7 +14,9 @@ class MatchController extends ApiController
      */
     public function index()
     {
-        //
+        $matches = Match::select()->with('team0')->with('team1')->paginate(Match::ITEMS_PER_PAGE);
+
+        return $this->showAll($matches);
     }
 
     /**
@@ -35,7 +37,10 @@ class MatchController extends ApiController
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $match = Match::create($data);
+
+        return $this->showOne($match);
     }
 
     /**
@@ -46,7 +51,8 @@ class MatchController extends ApiController
      */
     public function show(Match $match)
     {
-        //
+        $match = $match->where('id', $match->id)->with('team0')->with('team1')->get()[0];
+        return $this->showOne($match);
     }
 
     /**

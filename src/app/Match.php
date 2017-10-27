@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Match extends Model
 {
+
+    const ITEMS_PER_PAGE = 10;
+
     protected $fillable = [
         'name',
         'place',
@@ -15,9 +18,14 @@ class Match extends Model
         'team1_id'
     ];
 
-    public function teams()
+    public function team0()
     {
-        return $this->belongsToMany(Team::class);
+        return $this->belongsTo(Team::class);
+    }
+
+    public function team1()
+    {
+        return $this->belongsTo(Team::class);
     }
 
     public function matchMaster()

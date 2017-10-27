@@ -11,6 +11,7 @@ class User extends Authenticatable
     use HasApiTokens;
     use Notifiable;
 
+    const ITEMS_PER_PAGE =10;
     const ADMIN_USER = 1;
     const REGULAR_USER = 0;
     const MALE = 1;
