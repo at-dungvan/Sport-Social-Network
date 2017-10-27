@@ -1,10 +1,8 @@
-app.controller('homeCtrl', function ($scope, ContactService){
-	$scope.contacts = ContactService.getContacts();
-
-	$scope.removeContact = function (item) {
-		var index = $scope.contacts.indexOf(item);
-		$scope.contacts.splice(index, 1);
-		$scope.removed = 'Contact successfully removed.';
-	};
+app.controller('HomeController', function ($scope, $location) {
+	$scope.isShow = function() {
+		if($location.path() == "/login" || $location.path() == "/signup") {
+			return false;
+		}
+		return true;
+	}
 });
-
