@@ -3,21 +3,36 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
-	<link rel="stylesheet" href="public/style.css">
+
 
 </head>
-<body ng-app="myApp">
+<body>
+	<div class="global-wrapper" ng-app="myApp">
+		<nav></nav>
 
-<div ng-view></div>
+		<div class="container">
+			<home></home>
+		</div>
+	</div>
 
-<script src="app/app.js"></script>
-<script src="app/controllers/home-page.controller.js"></script>
-<script src="app/directives/list-match-home.directive.js"></script>
-<script src="app/controllers/login.controller.js"></script>
-<script src="app/directives/login.directive.js"></script>
-<script src="app/controllers/sign-up.controller.js"></script>
-<script src="app/directives/signUp.directive.js"></script>
+	<script src="app/app.js"></script>
+	<script src="app/controllers/nav.controller.js"></script>
+	<script src="app/directives/nav.directive.js"></script>
+	<script src="app/controllers/home.controller.js"></script>
+	<script src="app/directives/home.directive.js"></script>
+	<script src="app/services/contact.service.js"></script>
+	<script src="app/directives/contact.directive.js"></script>
+	<script src="app/controllers/contactInfo.controller.js"></script>
+	<script src="app/directives/contactInfo.directive.js"></script>
+	<script src="app/controllers/addContact.controller.js"></script>
+	<script src="app/directives/contactForm.directive.js"></script>
+	<script src="app/controllers/editContact.controller.js"></script>
+	<script src="app/controllers/login.controller.js"></script>
+	<script src="app/directives/login.directive.js"></script>
+	<script src="app/controllers/sign-up.controller.js"></script>
+	<script src="app/directives/signUp.directive.js"></script>
 </body>
 </html>

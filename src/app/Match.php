@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Match extends Model
 {
-
     const ITEMS_PER_PAGE = 10;
 
     protected $fillable = [

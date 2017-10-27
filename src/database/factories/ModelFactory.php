@@ -33,6 +33,7 @@ $factory->define(User::class, function (Faker $faker) {
     ];
 });
 
+
 $factory->define(Tournament::class, function (Faker $faker) {
    return [
        'name' => $faker->company,

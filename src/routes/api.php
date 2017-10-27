@@ -18,6 +18,16 @@ Route::middleware(['auth:api'])->group(function () {
      * Users
      */
     Route::resource('users', 'UserController', ['only' => ['update', 'destroy']]);
+  
+    /**
+    * Teams
+    */
+    Route::resource('teams', 'TeamController', ['only' => ['update', 'store', 'destroy']]);
+    
+    /**
+    * Matches
+    */
+    Route::resource('matches', 'MatchController', ['only' => ['update', 'store', 'destroy']]);
 });
 
 /**
@@ -38,7 +48,7 @@ Route::resource('matches', 'MatchController', ['only' => ['index', 'show']]);
 /**
  * Teams
  */
-Route::resource('teams', 'TeamController', ['except' => ['create', 'edit']]);
+Route::resource('teams', 'TeamController', ['only' => ['index', 'show']]);
 
 /**
  * Users

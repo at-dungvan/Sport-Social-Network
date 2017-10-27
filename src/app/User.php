@@ -57,6 +57,5 @@ class User extends Authenticatable
     public function getGenderAttribute($gender)
     {
         return $gender == User::MALE ? User::STR_MALE : User::STR_FEMALE;
-
     }
 }
