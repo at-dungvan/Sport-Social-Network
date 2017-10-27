@@ -39,6 +39,7 @@ class MatchController extends ApiController
     {
         $data = $request->all();
         $data['match_master_id'] = $request->user()->id;
+        dd($request->user()->id);
         $match = Match::create($data);
         return $this->showOne($match);
     }

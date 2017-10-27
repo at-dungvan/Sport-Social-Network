@@ -10,6 +10,7 @@ class Match extends Model
 
     protected $fillable = [
         'name',
+        'match_master_id',
         'place',
         'date',
         'time',

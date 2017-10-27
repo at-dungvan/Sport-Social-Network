@@ -17,7 +17,7 @@ class CreateMatchesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->integer('match_master_id')->unsigned();
-            $table->integer('tournament_id')->unsigned();
+            $table->integer('tournament_id')->unsigned()->default(1);
             $table->date('date');
             $table->time('time');
             $table->string('place');
