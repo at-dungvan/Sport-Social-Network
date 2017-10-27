@@ -9,20 +9,15 @@
 
 
 </head>
-<body>
-	<div class="global-wrapper" ng-app="myApp">
-		<nav></nav>
+<body ng-app="myApp">
+	<home></home>
 
-		<div class="container">
-			<home></home>
-		</div>
-	</div>
 
 	<script src="app/app.js"></script>
 	<script src="app/controllers/nav.controller.js"></script>
 	<script src="app/directives/nav.directive.js"></script>
-	<script src="app/controllers/home.controller.js"></script>
-	<script src="app/directives/home.directive.js"></script>
+	<script src="app/controllers/container.controller.js"></script>
+	<script src="app/directives/container.directive.js"></script>
 	<script src="app/services/contact.service.js"></script>
 	<script src="app/directives/contact.directive.js"></script>
 	<script src="app/controllers/contactInfo.controller.js"></script>
@@ -34,5 +29,8 @@
 	<script src="app/directives/login.directive.js"></script>
 	<script src="app/controllers/sign-up.controller.js"></script>
 	<script src="app/directives/signUp.directive.js"></script>
+	
+	<script src="app/controllers/home.controller.js"></script>
+	<script src="app/directives/home.directive.js"></script>
 </body>
 </html>
