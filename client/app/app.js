@@ -6,20 +6,20 @@ app.config(function ($routeProvider, $locationProvider){
 	    {
 	      templateUrl: 'app/views/default.html',
 	    })
-    .when('/contact-info/:contact_index', 
+    .when('/contact-info/:match_index', 
     	{
-	      templateUrl: 'app/views/contact-info.html',
-	      controller: 'contactInfoCtrl'
+	      templateUrl: 'app/views/match-info.html',
+	      controller: 'matchInfoCtrl'
 	    })
     .when('/add', 
 	    {
-	      templateUrl: 'app/views/contact-form.html',
-	      controller: 'addContactCtrl'
+	      templateUrl: 'app/views/match-form.html',
+	      controller: 'addMatchCtrl'
 	    })
     .when('/edit/:contact_index', 
 	    {
-	      templateUrl: 'app/views/contact-form.html',
-	      controller: 'editContactCtrl'
+	      templateUrl: 'app/views/match-form.html',
+	      controller: 'editMatchCtrl'
 	    })
     .when('/login',
 		{

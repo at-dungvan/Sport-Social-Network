@@ -1,4 +1,4 @@
-app.controller('navCtrl', function ($scope) {
+app.controller('navCtrl', function ($scope, userService) {
   $scope.nav = {
     navItems: [
     	{
@@ -23,4 +23,11 @@ app.controller('navCtrl', function ($scope) {
       $scope.nav.selectedIndex = $index;
     }
   };
+
+  $scope.isShow = function() {
+    if (!userService.getToken()){
+        return false;
+    }
+    return true;
+  }
 })
