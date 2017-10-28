@@ -1,14 +1,14 @@
 <div class="row panel panel-primary" ng-controller="containerCtrl">
   <div class="panel-heading">
-    <h2 class="panel-title">angular contact list app</h2>
+    <h2 class="panel-title">Sport social network</h2>
   </div>
   
   <!--     contact list      -->
   <div class="col-xs-5 panel-body">
     <ul class="list-group">
-      <li class="list-group-item"> <h4>Contacts:</h4>
-        <input class="form-control" placeholder="Seach Your Contacts" type="text" ng-model="searchText">
-        <contact class="list-group-item" ng-repeat="contact in contacts | orderBy: 'name' | filter: searchText "></contact>
+      <li class="list-group-item"> <h4>Matches:</h4>
+        <input class="form-control" placeholder="Seach Match" type="text" ng-model="searchText">
+        <match class="list-group-item" ng-repeat="contact in contacts | orderBy: 'name' | filter: searchText "></match>
       </li>
     </ul>
   </div>

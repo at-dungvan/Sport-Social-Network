@@ -1,31 +1,22 @@
 <div class="container">
-	<div class="box" id="sign-up">
-		<a class="back" href="#/signiup"><span class="back-arrow">Back</span></a>
-		<div class="brand">
-			<div class="logo">
-				<div class="square"></div>
-				<div class="square"></div>
-				<div class="square"></div>
-			</div>
-			<h2 class="title">Sign up now</h2>
-		</div>
-		<div class="form">
-			<form>
-				<div class="row">
-					<input type="text" name="firstname" placeholder="First name">
-					<input type="text" name="lastname" placeholder="Last name">
-				</div>
-				<input type="text" name="username" placeholder="User Name">
-				<input type="password" name="password" placeholder="Password">
-				<input type="text" name="address" placeholder="Address">
-				<input type="number" name="phonenumber" placeholder="Phone Number">
-				<div class="checkbox">
-					<input type="checkbox" name="terms" id="terms">
-					<label for="terms" class="checkbox-label"></label>
-					<label for="terms" class="description">I agree with <a href="#terms">Terms & conditions</a></label>
-				</div>
-				<button type="submit" name="submit">Sign up for free</button>
-			</form>
-		</div>
-	</div>
+    <div class="box" id="sign-up">
+        <a class="back" href="#back"><span class="back-arrow">Back</span></a>
+        <div class="brand">
+            <div class="logo">
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+            </div>
+            <h2 class="title">Sign up now</h2>
+        </div>
+        <div class="form">
+            <form ng-submit="signup()">
+                <input type="text" name="" ng-model="fullname" placeholder="Full Name">
+                <input type="text" ng-model="email" name="email" placeholder="Email">
+                <input type="password" ng-model='password' name="password" placeholder="Password">
+                <input type="password" ng-model='password_confirmation' name="password_confirmation" placeholder="Password confirmation">
+                <button type="submit" name="submit">Sign up for free</button>
+            </form>
+        </div>
+    </div>
 </div>

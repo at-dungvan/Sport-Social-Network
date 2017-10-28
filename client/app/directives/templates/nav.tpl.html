@@ -1,7 +1,7 @@
 <div class="navbar navbar-default" ng-controller="navCtrl">
   <div class="container-fluid">
     <div class="nav-header">
-      <a href="#" class="navbar-brand hidden-xs">Angular Exercise</a>
+      <a href="#" class="navbar-brand hidden-xs">Sport Social Network</a>
       <ul class="nav navbar-nav">
         <li ng-repeat="navLink in nav.navItems" ng-class="{active : $index === nav.selectedIndex}">
           <a class="text-center" ng-click="nav.navClick($index)" ng-href="#/{{navLink.link}}">{{navLink.display}}</a>
