@@ -22,8 +22,8 @@ class CreateMatchesTable extends Migration
             $table->time('time');
             $table->string('place');
             $table->text('description')->nullable();
-            $table->integer('team0_id')->unsigned();
-            $table->integer('team1_id')->unsigned();
+            $table->integer('team0_id')->unsigned()->nullable();
+            $table->integer('team1_id')->unsigned()->nullable();
             $table->timestamps();
 
             $table->foreign('match_master_id')->references('id')->on('users');

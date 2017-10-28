@@ -1,7 +1,7 @@
 ## User API
 
 
-### `Get` users
+### `GET` users
 ```
 /users
 ```
@@ -17,45 +17,134 @@ Get list of user
 
 ```json
 {
+    "current_page": 1,
     "data": [
         {
             "id": 1,
-            "full_name": "Ms. Jody Predovic II",
-            "email": "rickie.goldner@example.net",
+            "full_name": "Dr. Alene Mills",
+            "email": "assunta.stark@example.com",
             "is_admin": 0,
-            "phone": "1-668-651-5592 x5990",
+            "phone": "1-947-773-7941 x82122",
             "gender": "male",
-            "bio": "Nemo tempora reprehenderit similique voluptatem mollitia.",
-            "created_at": "2017-10-26 07:51:40",
-            "updated_at": "2017-10-26 07:51:40"
+            "bio": "Consequuntur voluptas quia molestias nisi odit ullam voluptate. Minus at voluptas sit id.",
+            "created_at": "2017-10-27 18:00:41",
+            "updated_at": "2017-10-27 18:00:41"
         },
         {
             "id": 2,
-            "full_name": "Caleb Hermann",
-            "email": "kertzmann.nasir@example.com",
-            "is_admin": 1,
-            "phone": "(873) 718-9007",
+            "full_name": "Mr. Alexandro Emard",
+            "email": "jon.mcclure@example.net",
+            "is_admin": 0,
+            "phone": "(709) 350-6751 x82285",
             "gender": "male",
-            "bio": "Explicabo aliquam rem at et sit.",
-            "created_at": "2017-10-26 07:51:40",
-            "updated_at": "2017-10-26 07:51:40"
+            "bio": "Saepe rerum consectetur dolores et repellendus laboriosam itaque.",
+            "created_at": "2017-10-27 18:00:41",
+            "updated_at": "2017-10-27 18:00:41"
         },
         {
             "id": 3,
-            "full_name": "Alene Kovacek",
-            "email": "homenick.magnolia@example.com",
-            "is_admin": 0,
-            "phone": "465-569-7735",
+            "full_name": "Mr. Isaias Lockman Sr.",
+            "email": "moen.rafaela@example.org",
+            "is_admin": 1,
+            "phone": "947.861.8977 x688",
             "gender": "male",
-            "bio": "Ea neque asperiores molestiae molestias nesciunt nulla. Cupiditate nam tempore distinctio aut.",
-            "created_at": "2017-10-26 07:51:40",
-            "updated_at": "2017-10-26 07:51:40"
+            "bio": "Aut omnis aspernatur sint omnis unde aliquam vel.",
+            "created_at": "2017-10-27 18:00:41",
+            "updated_at": "2017-10-27 18:00:41"
+        },
+        {
+            "id": 4,
+            "full_name": "Julie Koepp",
+            "email": "npowlowski@example.com",
+            "is_admin": 1,
+            "phone": "705.318.0623 x577",
+            "gender": "male",
+            "bio": "Aut ratione doloremque quas repudiandae fugiat beatae.",
+            "created_at": "2017-10-27 18:00:41",
+            "updated_at": "2017-10-27 18:00:41"
+        },
+        {
+            "id": 5,
+            "full_name": "Dr. Frederik Tromp III",
+            "email": "qjacobs@example.net",
+            "is_admin": 0,
+            "phone": "846.440.0200 x3639",
+            "gender": "male",
+            "bio": "Voluptatem voluptas velit in debitis.",
+            "created_at": "2017-10-27 18:00:41",
+            "updated_at": "2017-10-27 18:00:41"
+        },
+        {
+            "id": 6,
+            "full_name": "Dr. Cara Beier",
+            "email": "oturcotte@example.net",
+            "is_admin": 0,
+            "phone": "543-700-2062",
+            "gender": "male",
+            "bio": "Adipisci quod officiis nam eum architecto vero voluptatem dolor. Voluptatum ut ea culpa.",
+            "created_at": "2017-10-27 18:00:41",
+            "updated_at": "2017-10-27 18:00:41"
+        },
+        {
+            "id": 7,
+            "full_name": "Giovani Dibbert",
+            "email": "casper93@example.net",
+            "is_admin": 1,
+            "phone": "704.548.4803",
+            "gender": "male",
+            "bio": "Molestiae aut et rem nisi. Deleniti possimus tenetur nobis sit enim blanditiis quo.",
+            "created_at": "2017-10-27 18:00:41",
+            "updated_at": "2017-10-27 18:00:41"
+        },
+        {
+            "id": 8,
+            "full_name": "Major Flatley",
+            "email": "freida24@example.com",
+            "is_admin": 0,
+            "phone": "294-966-4169",
+            "gender": "male",
+            "bio": "Soluta voluptas blanditiis nesciunt sunt qui nam soluta aut.",
+            "created_at": "2017-10-27 18:00:41",
+            "updated_at": "2017-10-27 18:00:41"
+        },
+        {
+            "id": 9,
+            "full_name": "Mr. Dorthy Torp III",
+            "email": "jweimann@example.com",
+            "is_admin": 0,
+            "phone": "656-536-6806",
+            "gender": "male",
+            "bio": "Praesentium eum tempore atque nihil officiis.",
+            "created_at": "2017-10-27 18:00:41",
+            "updated_at": "2017-10-27 18:00:41"
+        },
+        {
+            "id": 10,
+            "full_name": "Prof. Omer Schmitt MD",
+            "email": "wunsch.herta@example.net",
+            "is_admin": 1,
+            "phone": "260-766-1147",
+            "gender": "male",
+            "bio": "Eveniet quia voluptates nobis quia. Esse rerum impedit voluptatum fugit maiores deserunt quia nulla.",
+            "created_at": "2017-10-27 18:00:41",
+            "updated_at": "2017-10-27 18:00:41"
         }
-    ]
+    ],
+    "first_page_url": "http://sport-social.ddns.net/users?page=1",
+    "from": 1,
+    "last_page": 11,
+    "last_page_url": "http://sport-social.ddns.net/users?page=11",
+    "next_page_url": "http://sport-social.ddns.net/users?page=2",
+    "path": "http://sport-social.ddns.net/users",
+    "per_page": 10,
+    "prev_page_url": null,
+    "to": 10,
+    "total": 105
+}
 }
 ```
 
-### `Post` create user
+### `POST` create user
 ```
 /users
 ```
@@ -101,7 +190,7 @@ Registry a user
   }
 }
 ```
-### `Post` user login
+### `POST` user login
 
 ```
 /users/login
@@ -175,7 +264,7 @@ Get information about a current user login.
 }
 ```
 
-### `Put` user
+### `PUT` user
 ```
 /users/{id}
 ```
@@ -227,7 +316,7 @@ Update profile of current user
 }
 ```
 
-### `Delete` user
+### `DELETE` user
 ```
 /users/{id}
 ```
